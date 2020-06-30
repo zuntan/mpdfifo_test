@@ -63,14 +63,14 @@ impl BackTask
                     Mutex::new(
                         BarData
                         {
-                        bar_l : Vec::< f32 >::new()
-                    ,   bar_r : Vec::< f32 >::new()
-                    ,   bar_h : Vec::< u32 >::new()
-                    ,   sbuf  : 0
-                    ,   fcnt  : 0
-                    ,   rcnt  : 0
-                    ,   scnt  : 0
-                    ,   delay : Duration::from_millis( 500 )
+                            bar_l : Vec::< f32 >::new()
+                        ,   bar_r : Vec::< f32 >::new()
+                        ,   bar_h : Vec::< u32 >::new()
+                        ,   sbuf  : 0
+                        ,   fcnt  : 0
+                        ,   rcnt  : 0
+                        ,   scnt  : 0
+                        ,   delay : Duration::from_millis( 500 )
                         }
                     )
                 );
@@ -122,9 +122,9 @@ impl BackTask
                 loop
                 {
                     tx.send( Event::Tick ).unwrap();
-                        thread::sleep( Duration::from_millis( tick_rate ) )
+                    thread::sleep( Duration::from_millis( tick_rate ) )
                     }
-                )
+            )
         };
 
         let sampler_handle =
@@ -133,7 +133,7 @@ impl BackTask
             let bar_data = bar_data.clone();
 
             thread::spawn( move ||
-                    {
+                {
                     let _ = sampler( tx, bar_data ).unwrap();
                 }
             )
@@ -184,13 +184,13 @@ const SAMPLING_RATE     : usize = 44100;
 const CHANNELS          : usize = 2;
 const F_BUF_SIZE            : usize = SAMPLING_RATE / 20;
 const F_BUF_SAMPLE_SZ   : usize = 2;
-const S_BUF_SIZE        : usize = 8192;
+const S_BUF_SIZE            : usize = 8192;
 const FIFO_STALL_SLEEP  : Duration = Duration::from_millis( 10 );
 const FIFO_STALL_RESET  : Duration = Duration::from_millis( 50 );
 const FIFO_STALL_REOPEN : Duration = Duration::from_millis( 1000 );
 const FFT_BUF_SIZE      : usize = S_BUF_SIZE / 2;
 const FFT_BUF_SLIDE_SIZE    : usize = FFT_BUF_SIZE / 2;
-const FFT_SPEC_SIZE         : usize = FFT_BUF_SIZE / 2;
+const FFT_SPEC_SIZE     : usize = FFT_BUF_SIZE / 2;
 const FFT_SPEC_HZ_D     : f32 = SAMPLING_RATE as f32 / 2.0 / FFT_SPEC_SIZE as f32;
 const OCT_SCALE         : f32 = 2.0;
 const ENABLE_CORRECTION : bool  = true;
@@ -477,5 +477,4 @@ fn sampler( tx : mpsc::Sender< Event >, bar_data : Arc< Mutex < BarData > > )
         }
     }
 }
-
 
