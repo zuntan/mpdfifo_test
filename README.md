@@ -2,5 +2,6 @@
 
 demo
 
-<img src="demo.gif">
+<video controls src="demo.mp4" type="video/mp4" />
+
 
