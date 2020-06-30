@@ -45,12 +45,11 @@ pub struct BarData
 
 pub struct BackTask
 {
-            rx          : mpsc::Receiver< Event >
+        rx              : mpsc::Receiver< Event >
 ,   pub bar_data        : Arc< Mutex < BarData > >
-
-,   _input_handle   : thread::JoinHandle<()>
-,   _tick_handle    : thread::JoinHandle<()>
-,   _sampler_handle     : thread::JoinHandle<()>
+,       _input_handle   : thread::JoinHandle<()>
+,       _tick_handle    : thread::JoinHandle<()>
+,       _sampler_handle : thread::JoinHandle<()>
 }
 
 impl BackTask
@@ -123,7 +122,7 @@ impl BackTask
                 {
                     tx.send( Event::Tick ).unwrap();
                     thread::sleep( Duration::from_millis( tick_rate ) )
-                    }
+                }
             )
         };
 
@@ -182,14 +181,14 @@ fn open_fifo() -> io::Result< File >
 
 const SAMPLING_RATE     : usize = 44100;
 const CHANNELS          : usize = 2;
-const F_BUF_SIZE            : usize = SAMPLING_RATE / 20;
+const F_BUF_SIZE        : usize = SAMPLING_RATE / 20;
 const F_BUF_SAMPLE_SZ   : usize = 2;
-const S_BUF_SIZE            : usize = 8192;
+const S_BUF_SIZE        : usize = 8192;
 const FIFO_STALL_SLEEP  : Duration = Duration::from_millis( 10 );
 const FIFO_STALL_RESET  : Duration = Duration::from_millis( 50 );
 const FIFO_STALL_REOPEN : Duration = Duration::from_millis( 1000 );
 const FFT_BUF_SIZE      : usize = S_BUF_SIZE / 2;
-const FFT_BUF_SLIDE_SIZE    : usize = FFT_BUF_SIZE / 2;
+const FFT_BUF_SLIDE_SIZE: usize = FFT_BUF_SIZE / 2;
 const FFT_SPEC_SIZE     : usize = FFT_BUF_SIZE / 2;
 const FFT_SPEC_HZ_D     : f32 = SAMPLING_RATE as f32 / 2.0 / FFT_SPEC_SIZE as f32;
 const OCT_SCALE         : f32 = 2.0;
