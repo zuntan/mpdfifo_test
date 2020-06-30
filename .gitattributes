@@ -1,0 +1,5 @@
+*	text eol=lf ident
+*.jpg	-text
+*.png	-text
+*.wav	-text
+*.mp3	-text

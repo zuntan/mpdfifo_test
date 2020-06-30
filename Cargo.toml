@@ -1,0 +1,22 @@
+[package]
+name = "mpdfifo_test"
+version = "0.1.0"
+authors = ["zuntan <zuntan@zuntan.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+termion = "1.5.5"
+libc = "*"
+
+num-complex = "0.3.0"
+chfft = "0.3.4"
+# rustfft = "3.0.1"
+
+env_logger = "0.7.1"
+log = "0.4.8"
+
+[features]
+default = []
+fft_rustfft = []
