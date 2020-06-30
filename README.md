@@ -2,6 +2,6 @@
 
 demo
 
-<video controls src="demo.mp4" type="video/mp4" ></video>
+<img src="demo.png" width="50%">
 
 
