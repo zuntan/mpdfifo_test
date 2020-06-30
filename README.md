@@ -68,12 +68,16 @@ audio_output {
 
 
  - 余計なことかもしれませんが、**windows の TeraTerm だと、rustmatrix の文字が赤** になっちゃいますので、ちょっとテコ入れしましたのでメモだけ
-    - TeraTerm の EnableBoldAttrColor を on から off に変更
+
+ - TeraTerm の EnableBoldAttrColor を on から off に変更
+
 ```
 ;EnableBoldAttrColor=on
 EnableBoldAttrColor=off
 ```
-    - TeraTerm が [ANSIエスケープシーケンスの拡張色変更](https://qiita.com/PruneMazui/items/8a023347772620025ad6#%E5%87%BA%E5%8A%9B%E8%89%B2%E3%81%AE%E5%A4%89%E6%9B%B4%E6%8B%A1%E5%BC%B5)に対応してないので、以下のコードを挿入して標準色に変更。
+
+ - TeraTerm が [ANSIエスケープシーケンスの拡張色変更](https://qiita.com/PruneMazui/items/8a023347772620025ad6#%E5%87%BA%E5%8A%9B%E8%89%B2%E3%81%AE%E5%A4%89%E6%9B%B4%E6%8B%A1%E5%BC%B5)に対応してないので、以下のコードを挿入して標準色に変更。
+
 ```diff
 diff -u rustmatrix.org/src/view.rs rustmatrix/src/view.rs
 --- rustmatrix.org/src/view.rs  2020-06-30 23:41:54.111700210 +0900
@@ -104,6 +108,6 @@ diff -u rustmatrix.org/src/view.rs rustmatrix/src/view.rs
      }
 ```
 
-    - **TeraTerm でも緑色で動きました。**きっと作者もその色の方が本意だと思ってくれるでしょう。
-    - ついでと言っては何ですが、 **rust のコンパイル時の色がさらにカラフルになりました。**（ははは。）
-    - ついでと言っては何ですが、 src/colorex.rs を作ってみました。本家で採用してくれないかなぁ...
+ - **TeraTerm でも緑色で動きました。**きっと作者もその色の方が本意だと思ってくれるでしょう。
+ - ついでと言っては何ですが、 **rust のコンパイル時の色がさらにカラフルになりました。**（ははは。）
+ - ついでと言っては何ですが、 src/colorex.rs を作ってみました。本家で採用してくれないかなぁ...
