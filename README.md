@@ -4,6 +4,9 @@
 
 <img src="demo.png" width="50%">
 
+ [動画はこちら](https://youtu.be/MUghghwXISY) YouTube
+
+
 # 概要
 
  - mpd の設定で、fifo にPCMデータを出力できるようなので、このデータを拾って FFT にかけて、スペクトルアナライザみたいなものを作ってみました。
