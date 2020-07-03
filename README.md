@@ -111,3 +111,8 @@ diff -u rustmatrix.org/src/view.rs rustmatrix/src/view.rs
  - **TeraTerm でも緑色で動きました。** きっと作者もその色の方が本意だと思ってくれるでしょう。
  - ついでと言っては何ですが、 **rust のコンパイル時の色がさらにカラフルになりました。** （ははは。）
  - ついでと言っては何ですが、 src/colorex.rs を作ってみました。本家で採用してくれないかなぁ...
+
+ 
+# See also
+ - blog
+    - https://zuntansan.hatenablog.jp/
